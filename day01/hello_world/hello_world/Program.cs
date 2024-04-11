@@ -9,7 +9,7 @@
             if (args.Length == 0)
             {
                 Console.WriteLine("사용법 : HELLOCSHARP.exe <이름>");
-                return
+                return;
             }  else
             {
                 Console.WriteLine($"Hello, {args[0]}!");
