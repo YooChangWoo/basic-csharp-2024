@@ -120,22 +120,81 @@ namespace MyExplorer.csproj
                 }
             }
         }
-        // 리스트뷰 마우스클릭 이벤트핸들러
-        private void LsvFiles_MouseClick(object sender, MouseEventArgs e)
+        // 리스트 뷰 아이템 더블 클릭 이벤트 핸들러. 실행파일
+        private void LsvFiles_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {   //  컨텍스트메뉴는 오른쪽 버튼에만 동작
-                CmsFiles.Show(LsvFiles, e.Location);  // 마우스 클릭한 위치에 쑈를 하네
+            var extension = LsvFiles.SelectedItems[0].Text.Split(".")[1];
+            if (extension == "exe")
+            {   // 실행파일 이면
+                // MessageBox.Show(LsvFiles.SelectedItems[0].Text);   // 디버깅용
+                // 실행파일의 경로는 TxtPath
+                var fullPath = TxtPath.Text + "\\" + LsvFiles.SelectedItems[0].Text;
+                Process.Start(fullPath);  // 외부 프로그램 실행
+
             }
         }
 
-        
+
 
         private void SpcExplorer_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {   //  컨텍스트메뉴는 오른쪽 버튼에만 동작
                 CmsFiles.Show(LsvFiles, e.Location);  // 마우스 클릭한 위치에 쑈를 하네
+            }
+        }
+
+        private void TstMenuLargeIcon_Click(object sender, EventArgs e)
+        {
+            LsvFiles.View = View.LargeIcon;
+        }
+
+        private void TstMenuSmallIcon_Click(object sender, EventArgs e)
+        {
+            LsvFiles.View = View.SmallIcon;
+        }
+
+        private void TstMenuList_Click(object sender, EventArgs e)
+        {
+            LsvFiles.View = View.List;
+        }
+
+        private void TstMenuDetails_Click(object sender, EventArgs e)
+        {
+            LsvFiles.View = View.Details;
+        }
+
+        private void TstMenuTile_Click(object sender, EventArgs e)
+        {
+            LsvFiles.View = View.Tile;
+        }
+        // 리스트뷰 마우스클릭 이벤트핸들러
+        private void LsvFiles_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                // 컨텍스트메뉴는 오른쪽 버튼에서만 동작
+                CmsFiles.Show(LsvFiles, e.Location); // 마우스 클릭한 위치에 쑈를 하네
+            }
+        }
+
+        private void LsvFiles_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                var extension = LsvFiles.SelectedItems[0].Text.Split(".")[1];
+                if (extension == "exe")
+                {   // 실행파일 이면
+                    // MessageBox.Show(LsvFiles.SelectedItems[0].Text);   // 디버깅용
+                    // 실행파일의 경로는 TxtPath
+                    var fullPath = TxtPath.Text + "\\" + LsvFiles.SelectedItems[0].Text;
+                    Process.Start(fullPath);  // 외부 프로그램 실행
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -44,14 +44,12 @@ namespace MyExplorer.csproj
             ClhSize = new ColumnHeader();
             ImgLargeIcon = new ImageList(components);
             CmsFiles = new ContextMenuStrip(components);
-            toolStripTextBox1 = new ToolStripTextBox();
             보기ToolStripMenuItem = new ToolStripMenuItem();
-            toolStripTextBox2 = new ToolStripTextBox();
-            toolStripTextBox3 = new ToolStripTextBox();
-            toolStripTextBox4 = new ToolStripTextBox();
-            toolStripTextBox5 = new ToolStripTextBox();
-            toolStripTextBox6 = new ToolStripTextBox();
-            toolStripTextBox7 = new ToolStripTextBox();
+            TstMenuLargeIcon = new ToolStripMenuItem();
+            TstMenuSmallIcon = new ToolStripMenuItem();
+            TstMenuList = new ToolStripMenuItem();
+            TstMenuDetails = new ToolStripMenuItem();
+            TstMenuTile = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SpcExplorer).BeginInit();
             SpcExplorer.Panel1.SuspendLayout();
@@ -157,7 +155,8 @@ namespace MyExplorer.csproj
             LsvFiles.TabIndex = 0;
             LsvFiles.UseCompatibleStateImageBehavior = false;
             LsvFiles.View = View.Details;
-            LsvFiles.MouseClick += LsvFiles_MouseClick;
+            LsvFiles.MouseDoubleClick += LsvFiles_MouseDoubleClick;
+            LsvFiles.MouseDown += LsvFiles_MouseDown_1;
             // 
             // ClhTitle
             // 
@@ -194,56 +193,51 @@ namespace MyExplorer.csproj
             // 
             // CmsFiles
             // 
-            CmsFiles.Items.AddRange(new ToolStripItem[] { toolStripTextBox1, 보기ToolStripMenuItem });
+            CmsFiles.Items.AddRange(new ToolStripItem[] { 보기ToolStripMenuItem });
             CmsFiles.Name = "CmsFiles";
-            CmsFiles.Size = new Size(161, 51);
-            // 
-            // toolStripTextBox1
-            // 
-            toolStripTextBox1.Name = "toolStripTextBox1";
-            toolStripTextBox1.Size = new Size(100, 23);
+            CmsFiles.Size = new Size(99, 26);
             // 
             // 보기ToolStripMenuItem
             // 
-            보기ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripTextBox2, toolStripTextBox3, toolStripTextBox4, toolStripTextBox5, toolStripTextBox6, toolStripTextBox7 });
+            보기ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { TstMenuLargeIcon, TstMenuSmallIcon, TstMenuList, TstMenuDetails, TstMenuTile });
             보기ToolStripMenuItem.Name = "보기ToolStripMenuItem";
-            보기ToolStripMenuItem.Size = new Size(160, 22);
+            보기ToolStripMenuItem.Size = new Size(98, 22);
             보기ToolStripMenuItem.Text = "보기";
             // 
-            // toolStripTextBox2
+            // TstMenuLargeIcon
             // 
-            toolStripTextBox2.Name = "toolStripTextBox2";
-            toolStripTextBox2.Size = new Size(100, 23);
-            toolStripTextBox2.Text = "큰 아이콘";
+            TstMenuLargeIcon.Name = "TstMenuLargeIcon";
+            TstMenuLargeIcon.Size = new Size(138, 22);
+            TstMenuLargeIcon.Text = "큰 아이콘";
+            TstMenuLargeIcon.Click += TstMenuLargeIcon_Click;
             // 
-            // toolStripTextBox3
+            // TstMenuSmallIcon
             // 
-            toolStripTextBox3.Name = "toolStripTextBox3";
-            toolStripTextBox3.Size = new Size(100, 23);
-            toolStripTextBox3.Text = "작은 아이콘";
+            TstMenuSmallIcon.Name = "TstMenuSmallIcon";
+            TstMenuSmallIcon.Size = new Size(138, 22);
+            TstMenuSmallIcon.Text = "작은 아이콘";
+            TstMenuSmallIcon.Click += TstMenuSmallIcon_Click;
             // 
-            // toolStripTextBox4
+            // TstMenuList
             // 
-            toolStripTextBox4.Name = "toolStripTextBox4";
-            toolStripTextBox4.Size = new Size(100, 23);
-            toolStripTextBox4.Text = "목록";
+            TstMenuList.Name = "TstMenuList";
+            TstMenuList.Size = new Size(138, 22);
+            TstMenuList.Text = "목록";
+            TstMenuList.Click += TstMenuList_Click;
             // 
-            // toolStripTextBox5
+            // TstMenuDetails
             // 
-            toolStripTextBox5.Name = "toolStripTextBox5";
-            toolStripTextBox5.Size = new Size(100, 23);
-            toolStripTextBox5.Text = "자세히";
+            TstMenuDetails.Name = "TstMenuDetails";
+            TstMenuDetails.Size = new Size(138, 22);
+            TstMenuDetails.Text = "자세히";
+            TstMenuDetails.Click += TstMenuDetails_Click;
             // 
-            // toolStripTextBox6
+            // TstMenuTile
             // 
-            toolStripTextBox6.Name = "toolStripTextBox6";
-            toolStripTextBox6.Size = new Size(100, 23);
-            toolStripTextBox6.Text = "타일";
-            // 
-            // toolStripTextBox7
-            // 
-            toolStripTextBox7.Name = "toolStripTextBox7";
-            toolStripTextBox7.Size = new Size(100, 23);
+            TstMenuTile.Name = "TstMenuTile";
+            TstMenuTile.Size = new Size(138, 22);
+            TstMenuTile.Text = "타일";
+            TstMenuTile.Click += TstMenuTile_Click;
             // 
             // FrmMain
             // 
@@ -264,7 +258,6 @@ namespace MyExplorer.csproj
             ((System.ComponentModel.ISupportInitialize)SpcExplorer).EndInit();
             SpcExplorer.ResumeLayout(false);
             CmsFiles.ResumeLayout(false);
-            CmsFiles.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -286,11 +279,10 @@ namespace MyExplorer.csproj
         private ContextMenuStrip CmsFiles;
         private ToolStripTextBox toolStripTextBox1;
         private ToolStripMenuItem 보기ToolStripMenuItem;
-        private ToolStripTextBox toolStripTextBox2;
-        private ToolStripTextBox toolStripTextBox3;
-        private ToolStripTextBox toolStripTextBox4;
-        private ToolStripTextBox toolStripTextBox5;
-        private ToolStripTextBox toolStripTextBox6;
-        private ToolStripTextBox toolStripTextBox7;
+        private ToolStripMenuItem TstMenuLargeIcon;
+        private ToolStripMenuItem TstMenuSmallIcon;
+        private ToolStripMenuItem TstMenuList;
+        private ToolStripMenuItem TstMenuDetails;
+        private ToolStripMenuItem TstMenuTile;
     }
 }
