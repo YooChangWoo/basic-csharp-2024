@@ -16,10 +16,6 @@ namespace NewBookRentalShopApp
     public partial class FrmLogin : MetroForm
     {
         private bool isLogin = false;
-        private string connString = "Data Source=localhost;" +
-                                    "Initial Catalog = BookRentalShop2024;" +
-                                    " User ID = sa; " +
-                                    "Encrypt=False;Password=mssql_p@ss";
 
         public bool IsLogin
         {    // 로그인 성공여부 저장 변수
@@ -87,7 +83,7 @@ namespace NewBookRentalShopApp
              */
             // 연결문자열(ConnectionString)
             // Data Source=localhost;Initial Catalog=BookRentalShop2024;User ID=sa;Encrypt=False;Password=mssql_q@ss
-            using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(Helper.Common.ConnString))
             {
                 conn.Open();
 
@@ -100,7 +96,7 @@ namespace NewBookRentalShopApp
                 SqlCommand cmd = new SqlCommand(query, conn);
                 // @userId, @password 파라미터 할당
                 SqlParameter prmUserId = new SqlParameter("@userId", userId);
-                SqlParameter prmPassword = new SqlParameter("@Password", GetMd5Hash(md5Hash, password));
+                SqlParameter prmPassword = new SqlParameter("@Password", Helper.Common.GetMd5Hash(md5Hash, password));
                 cmd.Parameters.Add(prmUserId);
                 cmd.Parameters.Add(prmPassword);
 
@@ -133,23 +129,10 @@ namespace NewBookRentalShopApp
 
         private void TxtUserId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == 13)
+            if (e.KeyChar == 13)
             {
                 TxtPassword.Focus(); // 패스워드로 포커스 이동
             }
-        }
-
-        string GetMd5Hash(MD5 md5Hash, string input)
-        {
-            // 입력 문자열을 byte배열로 변환한 뒤 MD5 해시 처리
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-            StringBuilder builder = new StringBuilder();  // 문자열을 좀더 쉽게 쓰게 만들어주는 클래스
-            for (int i = 0; i < data.Length; i++)
-            {
-                builder.Append(data[i].ToString("x2"));  // 16진수 문자로 각 글자를 전부 변환
-            }
-
-            return builder.ToString();
         }
     }
 }

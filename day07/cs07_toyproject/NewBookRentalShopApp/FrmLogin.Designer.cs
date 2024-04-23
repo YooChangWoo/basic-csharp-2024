@@ -67,6 +67,7 @@
             // TxtPassword
             // 
             this.TxtPassword.Location = new System.Drawing.Point(126, 89);
+            this.TxtPassword.Multiline = true;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '●';
             this.TxtPassword.Size = new System.Drawing.Size(125, 20);
