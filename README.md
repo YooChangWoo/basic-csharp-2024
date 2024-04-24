@@ -357,6 +357,8 @@ https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/e69f60d2-55b6-
         - 도서회원 관리
         - 대출관리
         - 이 프로그램은...
+
+        ![책대여프로그램](https://raw.githubusercontent.com/YooChangWoo/basic-csharp-2024/main/images/cs006.png)
         
 ## 나머지
 - Pending

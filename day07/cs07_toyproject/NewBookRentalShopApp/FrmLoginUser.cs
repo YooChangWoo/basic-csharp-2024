@@ -64,7 +64,8 @@ namespace NewBookRentalShopApp
             {
                 using (SqlConnection conn = new SqlConnection(Helper.Common.ConnString))
                 {
-                    conn.Open();
+                    var valid = true;
+                    var errMsg = "";
 
                     var query = "";
                     if (isNew) // INSERT이면
@@ -90,8 +91,8 @@ namespace NewBookRentalShopApp
                     SqlCommand cmd = new SqlCommand(query, conn);
                     if (isNew == false)
                     {
-                        SqlParameter prmUserIdx = new SqlParameter("@userIdx", TxtUserIdx.Text);
-                        cmd.Parameters.Add(prmUserIdx);
+                        MetroMessageBox.Show(this.Parent.Parent, errMsg, "입력오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
 
                     }
                     SqlParameter prmUserId = new SqlParameter("@userId", TxtUserId.Text);
@@ -105,17 +106,17 @@ namespace NewBookRentalShopApp
                     if (result > 0)
                     {
                         // this 메시지박스의 부모창이 누구냐, FrmLoginUser
-                        MetroMessageBox.Show(this, "저장성공!", "저장", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MetroMessageBox.Show(this.Parent.Parent, "저장성공!", "저장", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MetroMessageBox.Show(this, "저장실패!", "저장", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MetroMessageBox.Show(this.Parent.Parent, "저장실패!", "저장", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MetroMessageBox.Show(this, $"오류 : {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this.Parent.Parent, $"오류 : {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
 
@@ -127,11 +128,11 @@ namespace NewBookRentalShopApp
         {
             if (string.IsNullOrEmpty(TxtUserIdx.Text)) // 사용자아이디순번이 없으면
             {
-                MetroMessageBox.Show(this, "삭제할 사용자를 선택하세요", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this.Parent.Parent, "삭제할 사용자를 선택하세요", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            var answer = MetroMessageBox.Show(this, "정말 삭제하시겠습니까?", "삭제여부", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var answer = MetroMessageBox.Show(this.Parent.Parent, "정말 삭제하시겠습니까?", "삭제여부", MessageBoxButtons.OK, MessageBoxIcon.Error);
             if (answer == DialogResult.No) return;
 
             using (SqlConnection conn = new SqlConnection(Helper.Common.ConnString))
@@ -147,11 +148,11 @@ namespace NewBookRentalShopApp
 
                 if (result > 0)
                 {
-                    MetroMessageBox.Show(this, "삭제성공!", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(this.Parent.Parent, "삭제성공!", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MetroMessageBox.Show(this, "삭제실패!", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MetroMessageBox.Show(this.Parent.Parent, "삭제실패!", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             TxtUserIdx.Text = TxtUserId.Text = TxtPassword.Text = string.Empty;  // 입력, 수정, 삭제 이후에는 모든 입력값을 지워줘야 함
