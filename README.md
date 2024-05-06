@@ -371,4 +371,10 @@ https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/e69f60d2-55b6-
     - 기능....
     - 특징
     - 배운점
+ 
+
+https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/22bb46e8-3d74-49be-a072-d1d5a639bbe0
+
+
+    - 
 
