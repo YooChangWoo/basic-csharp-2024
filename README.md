@@ -368,6 +368,11 @@ https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/e69f60d2-55b6-
 
 ## 개인 토이프로젝트
 - 심플 메모장앱
+<<<<<<< HEAD
+=======
+## 개인 토이프로젝트
+- 심플 메모장앱
+>>>>>>> cfb5e9fd85f15897a36d0298ed3e6cee1a477ec3
     - 기능
         - 이 코드는 C#의 Windows Forms를 사용하여 간단한 로그인 및 로또 번호 생성을 구현
           사용자는 로그인을 한 후 버튼을 클릭하여 로또 번호를 생성하고, 그 결과를 윈도우 폼에 나타냄
@@ -382,4 +387,13 @@ https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/e69f60d2-55b6-
         - FrmLogin 클래스: 이 클래스는 로그인 폼을 나타냅니다. 사용자는 여기서 아이디와 비밀번호를 입력하여 로그인합니다.
         - btnLogin_Click 메서드: 사용자가 입력한 아이디와 비밀번호를 확인하여 로그인을 처리하는 이벤트 핸들러입니다. 올바른 정보가 입력되면 메시지를 출력하고 프로그램을 종료합니다.
         - BtnCancel_Click 메서드: 취소 버튼을 클릭할 때 프로그램을 종료하는 이벤트 핸들러입니다.
+<<<<<<< HEAD
+=======
+ 
+
+https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/22bb46e8-3d74-49be-a072-d1d5a639bbe0
+
+
+    - 
+>>>>>>> cfb5e9fd85f15897a36d0298ed3e6cee1a477ec3
 
