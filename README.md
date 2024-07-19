@@ -353,7 +353,8 @@ https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/e69f60d2-55b6-
         - 책장르 관리
         - 책정보 관리
 
-## 10일차 
+## 10일차
+    - 도서관리 앱
         - 도서회원 관리
         - 대출관리
         - 이 프로그램은...
