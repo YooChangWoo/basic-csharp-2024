@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9C4ACC45-0345-4DB5-BAB3-59C4E28CB1F4}</ProjectGuid>
+    <ProjectGuid>{3EAD01EF-C627-45D8-B5BC-EC40D45C7534}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>NewBookRentalShopApp</RootNamespace>
     <AssemblyName>NewBookRentalShopApp</AssemblyName>
@@ -58,11 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAboutasf.cs">
+    <Compile Include="FrmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAboutasf.Designer.cs">
-      <DependentUpon>FrmAboutasf.cs</DependentUpon>
+    <Compile Include="FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBookRental.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAboutasf.resx">
-      <DependentUpon>FrmAboutasf.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBookRental.resx">
       <DependentUpon>FrmBookRental.cs</DependentUpon>
@@ -153,19 +153,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -177,17 +177,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="books.ico" />
-    <Content Include="imgs %281%29\book.ico" />
-    <Content Include="imgs %281%29\book.png" />
-    <Content Include="imgs %281%29\division.ico" />
-    <Content Include="imgs %281%29\division.png" />
-    <Content Include="imgs %281%29\login.ico" />
-    <Content Include="imgs %281%29\login.png" />
-    <Content Include="imgs %281%29\member.ico" />
-    <Content Include="imgs %281%29\member.png" />
-    <Content Include="imgs %281%29\rental.ico" />
-    <Content Include="imgs %281%29\rental.png" />
+    <Content Include="img\book.ico" />
+    <Content Include="img\book.png" />
+    <Content Include="img\division.ico" />
+    <Content Include="img\division.png" />
+    <Content Include="img\login.ico" />
+    <Content Include="img\login.png" />
+    <Content Include="img\member.ico" />
+    <Content Include="img\member.png" />
+    <Content Include="img\rental.ico" />
+    <Content Include="img\rental.png" />
+    <None Include="Resources\search4.png" />
+    <None Include="Resources\search3.png" />
     <None Include="Resources\search2.png" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\search.png" />
+    <None Include="User.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

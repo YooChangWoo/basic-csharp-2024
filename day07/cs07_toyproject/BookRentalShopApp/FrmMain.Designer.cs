@@ -31,51 +31,33 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             MnsBookRental = new MenuStrip();
             StsBookRental = new StatusStrip();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             toolStripStatusLabel3 = new ToolStripStatusLabel();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripMenuItem();
-            toolStripMenuItem4 = new ToolStripMenuItem();
             MnsBookRental.SuspendLayout();
             StsBookRental.SuspendLayout();
             SuspendLayout();
             // 
             // MnsBookRental
             // 
-            MnsBookRental.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem3, toolStripMenuItem4 });
+            MnsBookRental.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
             MnsBookRental.Location = new Point(0, 0);
             MnsBookRental.Name = "MnsBookRental";
-            MnsBookRental.Size = new Size(800, 24);
-            MnsBookRental.TabIndex = 0;
+            MnsBookRental.Size = new Size(707, 24);
+            MnsBookRental.TabIndex = 1;
             MnsBookRental.Text = "menuStrip1";
             // 
             // StsBookRental
             // 
             StsBookRental.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel2, toolStripStatusLabel3 });
-            StsBookRental.Location = new Point(0, 428);
+            StsBookRental.Location = new Point(0, 409);
             StsBookRental.Name = "StsBookRental";
-            StsBookRental.Size = new Size(800, 22);
-            StsBookRental.TabIndex = 1;
+            StsBookRental.Size = new Size(707, 22);
+            StsBookRental.TabIndex = 2;
             StsBookRental.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(121, 17);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // toolStripStatusLabel2
-            // 
-            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(121, 17);
-            toolStripStatusLabel2.Text = "toolStripStatusLabel2";
-            // 
-            // toolStripStatusLabel3
-            // 
-            toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            toolStripStatusLabel3.Size = new Size(121, 17);
-            toolStripStatusLabel3.Text = "toolStripStatusLabel3";
             // 
             // toolStripMenuItem1
             // 
@@ -83,23 +65,41 @@
             toolStripMenuItem1.Size = new Size(57, 20);
             toolStripMenuItem1.Text = "파일(&F)";
             // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(62, 20);
+            toolStripMenuItem2.Text = "관리(&M)";
+            // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(62, 20);
-            toolStripMenuItem3.Text = "관리(&M)";
+            toolStripMenuItem3.Size = new Size(72, 20);
+            toolStripMenuItem3.Text = "도움말(&H)";
             // 
-            // toolStripMenuItem4
+            // toolStripStatusLabel1
             // 
-            toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(72, 20);
-            toolStripMenuItem4.Text = "도움말(&H)";
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(83, 17);
+            toolStripStatusLabel1.Text = "로그인 아이디";
+            // 
+            // toolStripStatusLabel2
+            // 
+            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            toolStripStatusLabel2.Size = new Size(40, 17);
+            toolStripStatusLabel2.Text = "UserId";
+            // 
+            // toolStripStatusLabel3
+            // 
+            toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            toolStripStatusLabel3.Size = new Size(109, 17);
+            toolStripStatusLabel3.Text = "LastLoginDateTime";
             // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(707, 431);
             Controls.Add(StsBookRental);
             Controls.Add(MnsBookRental);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -121,8 +121,8 @@
         private MenuStrip MnsBookRental;
         private StatusStrip StsBookRental;
         private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem2;
         private ToolStripMenuItem toolStripMenuItem3;
-        private ToolStripMenuItem toolStripMenuItem4;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel toolStripStatusLabel2;
         private ToolStripStatusLabel toolStripStatusLabel3;

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace NewBookRentalShopApp
 {
-    partial class FrmAboutasf : Form
+    partial class FrmAbout : Form
     {
-        public FrmAboutasf()
+        public FrmAbout()
         {
             InitializeComponent();
             this.Text = String.Format("{0} 정보", AssemblyTitle);

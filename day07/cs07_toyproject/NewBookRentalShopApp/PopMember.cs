@@ -1,24 +1,19 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework;
-using MetroFramework.Forms;
 
 namespace NewBookRentalShopApp
 {
     public partial class PopMember : MetroForm
     {
-        private bool isNew = false; // UPDATE(false), INSERT(true)
-
         public PopMember()
         {
             InitializeComponent();
@@ -26,7 +21,7 @@ namespace NewBookRentalShopApp
 
         private void PopMember_Load(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(Helper.Common.ConnString))
+            using (SqlConnection conn = new SqlConnection(Helper.Common.ConnSting))
             {
                 conn.Open();
 
@@ -43,6 +38,7 @@ namespace NewBookRentalShopApp
 
                 DgvResult.DataSource = ds.Tables[0];
                 DgvResult.ReadOnly = true; // 수정불가
+                // 컬럼 이름 변경
                 DgvResult.Columns[0].HeaderText = "회원순번";
                 DgvResult.Columns[1].HeaderText = "회원명";
                 DgvResult.Columns[2].HeaderText = "등급";
@@ -54,7 +50,7 @@ namespace NewBookRentalShopApp
                 DgvResult.Columns[1].Width = 80;
                 DgvResult.Columns[2].Width = 50;
                 DgvResult.Columns[4].Width = 100;
-                //DgvResult.Columns[5].Width = 73;
+                // DgvResult.Columns[5].Width = 73;
             }
         }
 
@@ -72,18 +68,17 @@ namespace NewBookRentalShopApp
             }
 
             var selData = DgvResult.SelectedRows[0];
-            // MessageBox.Show(selData.Cells[0].Value.ToString() + selData.Cells[1].Value.ToString());
+            //MessageBox.Show(selData.Cells[0].Value.ToString() + selData.Cells[1].Value.ToString());
             Helper.Common.SelMemberIdx = selData.Cells[0].Value.ToString();
             Helper.Common.SelMemberName = selData.Cells[1].Value.ToString();
 
-            this.DialogResult = DialogResult.Yes; // DialogResult 발생시킴.
+            this.DialogResult = DialogResult.Yes;   // DialogResult 발생시킴.
             this.Close();
         }
 
-        private void BtnCancel_Click(object sender, EventArgs e)
+        private void BtnCancle_Click(object sender, EventArgs e)
         {
-            this.Close(); // 그냥 닫기
+            this.Close();   // 그냥 닫기
         }
-
     }
 }
