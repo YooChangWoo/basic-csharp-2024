@@ -354,11 +354,12 @@ https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/e69f60d2-55b6-
         - 책정보 관리
 
 ## 10일차
+- 토이 프로젝트
     - 도서관리 앱
-        - 도서회원 관리
-        - 대출관리
+        - 도서 회원 관리
+        - 대출 관리
         - 이 프로그램은...
-            ![cs006](https://github.com/user-attachments/assets/121a5e70-6b33-4982-a2cc-8655c86279c2)
+            ![책대여프로그램](https://github.com/YooChangWoo/basic-csharp-2024/blob/main/images/cs006.png)
 
             
 ## 나머지
