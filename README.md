@@ -353,13 +353,15 @@ https://github.com/YooChangWoo/basic-csharp-2024/assets/158007388/e69f60d2-55b6-
         - 책장르 관리
         - 책정보 관리
 
-## 10일차 
-        - 도서회원 관리
-        - 대출관리
+## 10일차
+- 토이 프로젝트
+    - 도서관리 앱
+        - 도서 회원 관리
+        - 대출 관리
         - 이 프로그램은...
+            ![책대여프로그램](https://github.com/YooChangWoo/basic-csharp-2024/blob/main/images/cs006.png)
 
-        ![책대여프로그램](https://raw.githubusercontent.com/YooChangWoo/basic-csharp-2024/main/images/cs006.png)
-        
+            
 ## 나머지
 - Pending
     - IoT Dummy 앱 with SQL Server(IoT, DB)
